@@ -11,7 +11,18 @@ $second-font: 'Italianno';
 *{
     margin: 0;
     padding: 0;
+    
     font-family: 'Josefin Sans';
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden; /* Para remover a barra de rolagem horizontal, se houver */
+
 }
 
 #header{
@@ -152,15 +163,17 @@ $second-font: 'Italianno';
 }
 #homeinfo h1{
     color: $primary-color;
-    font-family: "Italianno";
+    font-family: $second-font;
+    font-weight: lighter;
     font-size: 60px;
 
 }
 #homeinfo button{
     margin-top: 20px;
+    font-family: $second-font;
     background-color: $primary-color;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: lighter;
     width: 130px;
     padding: 5px;
     border-radius: 10px;
@@ -169,9 +182,10 @@ $second-font: 'Italianno';
 }
 
 #overlay {
+
     position: fixed; /* Sit on top of the page content */
     display: block; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
+    width: 100%; /* Ajuste a largura */
     height: 100vh; /* Full height (cover the whole page) */
     top: 0;
     left: 0;
@@ -181,14 +195,15 @@ $second-font: 'Italianno';
     z-index: 2;
 }    
 
+/* CARDAPIO PAGE */
 #cardapio{
+    width: 100%;
     box-sizing: content-box;
     padding-top: 150px;
-    padding-left: 30px;
+    padding-left: 50px;
     padding-right: 30px;
     font-size: 25px;
     color: rgb(255, 255, 255);
-    width: 100%;
     height: 100vh;
     background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
 
@@ -199,22 +214,29 @@ $second-font: 'Italianno';
     box-sizing: border-box;
     position: absolute;
     z-index: 9;
-    width: 100%;
+    
+    h1{
+        color: $primary-color;
+        z-index: 7;
+        font-weight: lighter;
+        font-size: 50px;
+        font-family: $second-font;
+    }
+    span:hover {
+
+        border-bottom: 0.2px solid $primary-color;
+        cursor: pointer;
+    
+      }
 
 }
-span:hover {
 
-    border-bottom: 0.2px solid $primary-color;
-    cursor: pointer;
-
-  }
 
   #cardapiocontainer{
     box-sizing: border-box;
     position: absolute;
     z-index: 30;
-    margin-top: 60px;
-    width: 100%;
+    margin-top: 110px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap; 
@@ -233,11 +255,10 @@ span:hover {
   }
 
   .cardapiocard h4{
-    color: rgb(194, 194, 194);
+    color: $primary-color;
     font-weight: lighter;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: $primary-font;
+    font-size: 25px;
+    font-family: $second-font;
   }
   .cardapiocard p{
     font-family: $primary-font;
@@ -251,3 +272,140 @@ span:hover {
 
 
   }
+
+
+
+/* PROGRAMAÇÃO PAGE */
+#programacao{
+    box-sizing: content-box;
+    padding-top: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+    height: 100vh;
+    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+
+    background-size: cover;
+
+}
+#programacaoheader{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 9;
+    
+    h1{
+        color: $primary-color;
+        z-index: 7;
+        font-weight: lighter;
+        font-size: 50px;
+        font-family: $second-font;
+    }
+
+}
+
+/* CONTATO PAGE */
+#contact{
+    box-sizing: content-box;
+    padding-top: 110px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+
+    background-size: cover;
+
+}
+#contactheader{
+    position: absolute;
+    z-index: 9;
+    h1{
+        font-size: 50px;
+        font-family: $second-font;
+        color: $primary-color;
+        font-weight: lighter;
+    }
+
+    #contactinfo{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 20px;
+    
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            label{
+                font-size: 20px;
+            }
+            input, button, textarea{
+                height: 35px;
+                font-size: 20px;
+                border-radius: 10px;
+                border: 0.5px solid rgb(81, 81, 81);
+                background-color: rgba(0, 0, 0, 0.3);    
+                color: white;
+                padding: 0px 10px;
+
+            }
+            button{
+                background-color: $primary-color;
+                font-size: 25px;
+                font-family: $second-font;
+                color: black;
+                cursor: pointer;
+            }
+            textarea{
+                height: 130px;
+            }
+        }
+    }
+}
+
+
+/* SOBRE PAGE */
+#sobre{
+    position: absolute;
+    box-sizing: border-box;
+    padding-top: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 170%;
+    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+
+    background-size: cover;
+
+}
+#sobretexts{
+    box-sizing: border-box;
+    position: absolute;
+
+    z-index: 9;    
+    h1, h2{
+        box-sizing: border-box;
+        width: 50%;
+
+        color: $primary-color;
+        z-index: 7;
+        font-weight: lighter;
+        font-size: 50px;
+        font-family: $second-font;
+    }
+    h2{
+        font-size: 35px;
+    }
+    div{
+        width: 80%;
+        margin: 10px 0px;
+    }
+
+}

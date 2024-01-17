@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const path = require('path');
 // SCSS CONFIG
 
@@ -7,7 +9,10 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
+
   },
+  plugins: [new HtmlWebpackPlugin()],
   module : {
   rules: [
     {
@@ -20,7 +25,15 @@ module.exports = {
         // Compiles Sass to CSS
         "sass-loader",
       ],
-    }
+    },
+    {
+      test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      type: 'asset/resource',
+    },
+    {
+      test: /\.(woff|woff2|eot|ttf|otf)$/i,
+      type: 'asset/resource',
+    },
   ]
 }
 }

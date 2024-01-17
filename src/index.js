@@ -104,6 +104,6 @@ function getPageById(pageId) {
   }
 }
 
-createFullBody('sobre')
+createFullBody()
 
 export {removeFullBody, createFullBody}

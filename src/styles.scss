@@ -1,18 +1,28 @@
 /* NAV */
 
 /*DEPENDECIES */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
+@font-face {
+    font-family: 'Italianno';
+    src: url('./Italianno.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
 
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 $primary-color: rgb(245, 237, 125);
-$primary-font: 'Josefin Sans';
+$primary-font: 'Roboto';
 $second-font: 'Italianno';
+$background-image: url("pizzaforno.jpg");
 
 *{
     margin: 0;
     padding: 0;
-    
-    font-family: 'Josefin Sans';
+    font-family: $primary-font;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -40,7 +50,7 @@ html, body{
 }
 
 #icon {
-    font-family: 'Italianno' !important;
+    font-family: $second-font !important;
     color: white;
     font-size: 30px;
     display: flex;
@@ -50,7 +60,7 @@ html, body{
     justify-content: center;
 }
 #icon p{
-    font-family: 'Italianno' !important;
+    font-family: $second-font !important;
     color: $primary-color;
 
 }
@@ -58,6 +68,7 @@ html, body{
     display: flex;
     gap: 10px;
     font-size: 17px;
+    font-family: $primary-font;
 
 }
 #nav ul a {
@@ -144,7 +155,8 @@ html, body{
     flex-direction: column;
     width: 100%;
     height: 140vh;
-    background-image: url("https://conviviumosteria.com/wp-content/uploads/2019/06/best-italian-restaurant-brooklyn.jpg");
+    background-image: url("./italianrestaurant.jpg");
+    background-size: cover;
     z-index: 1;
 }
 #homeinfo{
@@ -205,7 +217,7 @@ html, body{
     font-size: 25px;
     color: rgb(255, 255, 255);
     height: 100vh;
-    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+    background-image: $background-image;
 
     background-size: cover;
 
@@ -285,7 +297,7 @@ html, body{
     color: rgb(255, 255, 255);
 
     height: 100vh;
-    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+    background-image: $background-image;
 
     background-size: cover;
 
@@ -317,7 +329,7 @@ html, body{
     color: rgb(255, 255, 255);
     width: 100%;
     height: 100vh;
-    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+    background-image: $background-image;
 
     background-size: cover;
 
@@ -382,7 +394,7 @@ html, body{
     color: rgb(255, 255, 255);
     width: 100%;
     height: 170%;
-    background-image: url("http://www.outdoorpizzaoven.info/images/slide6.jpg");
+    background-image: $background-image;
 
     background-size: cover;
 

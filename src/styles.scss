@@ -256,6 +256,7 @@ html, body{
   .cardapiocard{
     padding: 10px;
     display: flex;
+    font-size: 10px;
     flex-direction: row;
     width: 350px;
     height: 100px;
@@ -275,7 +276,7 @@ html, body{
   .cardapiocard p{
     font-family: $primary-font;
     color: white;
-    font-size: 17px;
+    font-size: 14px;
   }
   .cardapiocard img{
     height: 100px;

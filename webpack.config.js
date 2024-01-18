@@ -4,7 +4,7 @@ const path = require('path');
 // SCSS CONFIG
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index',
   devtool: 'inline-source-map',
   output: {
     filename: 'main.js',

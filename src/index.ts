@@ -62,7 +62,7 @@ function NavComponent(){
 
 }
 
-function createFullBody(page){
+function createFullBody(page : string){
   const overlay = document.createElement("div");
   overlay.id = "overlay"
     document.body.appendChild(overlay);

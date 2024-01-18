@@ -35,17 +35,11 @@ function NavComponent(){
       const navItem = document.createElement("a")
       const li = document.createElement("li")
 
-      if(item.hasOwnProperty('name')){
-          li.innerText = item.name
-          li.id = item.id + "item"
+      li.innerText = item.name || capitalizeFirstLetter(item.id)
+      li.id = item.id + "item"
 
-      }
-      else{
-          li.innerText = capitalizeFirstLetter(item.id)
-          li.id = item.id + "item"
+      
 
- 
-      }
       li.addEventListener("click", ()=>{
             
            removeFullBody()
@@ -71,18 +65,11 @@ function NavComponent(){
 function createFullBody(page){
   const overlay = document.createElement("div");
   overlay.id = "overlay"
-  if(page == null){
-    document.body.appendChild(overlay);
-    document.body.appendChild(NavComponent());
-    document.body.appendChild(homePage())
-    document.body.appendChild(footerComponet())
-  }
-  else{
     document.body.appendChild(overlay);
     document.body.appendChild(NavComponent());
     document.body.appendChild(getPageById(page)())
     document.body.appendChild(footerComponet())
-  }
+  
 
 }
 function removeFullBody(){
@@ -91,19 +78,12 @@ function removeFullBody(){
   }
 }
 
-function getPageById(pageId) {
-  const pageEntry = pagesNavigation.find(entry => entry.id === pageId);
+function getPageById(pageId : string) {
+  const pageEntry = pagesNavigation.find(entry => entry.id === pageId) || pagesNavigation[0];
   
-  if (pageEntry) {
     return pageEntry.page;
-  } else {
-    // Retornar algo padrão ou lançar um erro, dependendo do seu caso
-    console.error(`Página com ID '${pageId}' não encontrada.`);
-    // Retornando null neste exemplo
-    return null;
-  }
 }
 
-createFullBody()
+createFullBody('home')
 
 export {removeFullBody, createFullBody}

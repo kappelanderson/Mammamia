@@ -34,6 +34,14 @@ module.exports = {
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
       type: 'asset/resource',
     },
+    {
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    },
   ]
-}
+},
+resolve: {
+  extensions: ['.tsx', '.ts', '.js'],
+},
 }
